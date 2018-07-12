@@ -1,0 +1,383 @@
+color-primary = #ff8859
+cool-gray = #8b9399
+white-smoke = #f4f4f4
+dim-gray = #61686d
+main-gradient = linear-gradient(0deg, #fc5b45, #ff8859)
+box-width = 320px
+chose-color = #A0B4CE
+time-border-color = #E6E6EF
+isabellin = #e0e0e2
+
+inline()
+	display: inline-block
+	height: 100%
+	vertical-align: top
+
+picker-input()
+	text-align: center
+	width: 100%
+	height: 100%
+	color: dim-gray
+	line-height: 40px
+	border: none
+	background-color: transparent
+	font-size: 22px
+
+picker-icon()
+	position: relative
+	top: 7px
+	left: 7px
+	width: 26px
+	height: 26px
+	border-radius: 50%
+	color: color-primary
+	cursor: pointer
+	font-size: 26px
+	font-weight: 600
+	user-select: none
+
+	&:hover
+		background-color: color-primary
+		color: white-smoke
+
+	&:active
+		box-shadow: 0px 0px 1px 1px color-primary
+
+.poppinz-date-picker-wrapper
+	height: auto
+	width: box-width
+	border-radius: 4px
+	background: main-gradient
+	padding: 2px
+	z-index: 100
+	position: absolute
+
+	.poppinz-date-picker
+		height: auto
+		width: 100%
+		border-radius: 2px
+		overflow: hidden
+		background-color: white
+
+		.date-picker-header-wrapper,
+		.date-picker-body-wrapper,
+		.date-picker-footer-wrapper
+			width: 100%
+
+		.date-picker-header-wrapper
+			height: 82px
+
+			.date-picker-header
+				width: calc(100% - 10px)
+				height: 100%
+				margin: auto
+
+				.date-selector-wrapper,
+				.now-wrapper,
+				.date-picker-logo-wrapper
+					inline()
+
+				.now-wrapper
+					width: 80px
+					height: 70px
+
+					.now-container
+						width: 60px
+						height: 60px
+						border-radius: 3px
+						position: relative
+						top: 10px
+						left: 0px
+						border: 2px solid time-border-color
+
+						.now-label
+							color: cool-gray
+							line-height: 24px
+							height: 24px
+							width: 100%
+							font-size: 14px
+							text-align: center
+
+						.now-icon-wrapper
+							height: calc(100% - 24px)
+							width: 100%
+							text-align: center
+
+							.icon
+								width: 26px
+								height: 26px
+								color: color-primary
+								font-size: 26px
+								cursor: pointer
+
+								&:hover
+									color: white
+									background-color: color-primary
+									border-radius: 50%
+
+								&:active
+									box-shadow: 0 0 1px 1px color-primary
+
+				.date-selector-wrapper
+					width: 150px
+					height: 100%
+
+					.year-selector-wrapper
+						border-bottom: 2px solid time-border-color
+
+					.year-selector-wrapper,
+					.month-selector-wrapper
+						width: 144px
+						margin: auto
+						height: 40px
+
+						.date-selector-info-wrapper,
+						.date-selector-icon-wrapper
+							inline()
+
+						.date-selector-icon-wrapper
+							width: 40px
+
+							.icon
+								picker-icon()
+
+						.date-selector-info-wrapper
+							width: 64px
+
+							input,
+							.date-selector-label
+								picker-input()
+
+				.date-picker-logo-wrapper
+					width: 80px
+
+					.date-picker-logo
+						width: 100%
+						text-align: right
+						height: 70px
+						position: relative
+						top: 3px
+
+						img
+							height: 70px
+
+		.date-picker-body-wrapper
+			width: 100%
+
+			.date-picker-body
+				width: calc(100% - 10px)
+				margin: auto
+
+				.date-picker-body-week-title-wrapper,
+				.date-picker-body-content-wrapper
+					width: 100%
+
+				.date-picker-body-week-title-wrapper
+					height: 28px
+					background-color: white-smoke
+
+					.date-picker-body-week-title
+						width: 301px
+						margin: auto
+						height: 100%
+
+						div
+							inline()
+							width: 43px
+							text-align: center
+							line-height: 18px
+							font-size: 12px
+							font-weight: 600
+							color: dim-gray
+
+				.date-picker-body-content-wrapper
+					height: auto
+					width: 100%
+					background-color: white-smoke
+
+					.date-picker-body-separator
+						height: 6px
+						background-color: white
+						width: 100%
+
+					.date-picker-body-content
+						width: 301px
+						height: auto
+						margin: auto
+
+						.week
+							height: 30px
+
+							.day
+								inline()
+								width: 43px
+								user-select: none
+
+								&.day-current .day-value
+									box-shadow: inset 0 0 0 2px lighten(color-primary, 10%)
+									border-radius: 50%
+
+								&.day-weekend
+									color: cool-gray
+
+								&.day-selected
+									.day-value
+										background-color: color-primary
+										color: white
+										border-radius: 50%
+
+								&.day-muted
+									opacity: 0
+									.day-value
+										cursor: default
+
+								.day-value
+									position: relative
+									text-align: center
+									top: 1px
+									left: 7px
+									width: 28px
+									height: 28px
+									line-height: 28px
+									cursor: pointer
+									user-select: none
+
+									&:hover
+										background-color: color-primary
+										color: white
+										border-radius: 50%
+
+									&:active
+										box-shadow: 0 0 1px 1px color-primary
+
+		.date-picker-footer-wrapper
+			height: 44px
+
+			.date-picker-footer
+				height: 44px
+				width: 100%
+				margin: auto
+
+				.footer-time-wrapper,
+				.footer-buttons-wrapper
+					inline()
+
+				.footer-time-wrapper
+					width: 200px
+					padding-left: 5px
+
+					.footer-time
+						height: 36px
+						display: inline-block
+						border: 2px solid time-border-color
+						border-radius: 3px
+
+						.footer-hours-wrapper,
+						.footer-ampm-wrapper,
+						.footer-minutes-wrapper
+							inline()
+							width: auto
+
+							.footer-hours,
+							.footer-ampm,
+							.footer-minutes
+								line-height: 36px
+								height: 100%
+
+								.hours-label,
+								.minutes-label,
+								input,
+								.time-arrows-wrapper
+									inline()
+
+								.hours-label,
+								.minutes-label
+									width: 22px
+									font-size: 18px
+									color: cool-gray
+									text-align: right
+
+								input
+									text-align: center
+									padding: 1px
+									width: 28px
+									height: 26px
+									line-height: 26px
+									color: dim-gray
+									font-size: 18px
+									border: none
+									position: relative
+									top: 4px
+
+								.time-arrows-wrapper
+									width: 20px
+									background-color: white-smoke
+									opacity: 0.3
+
+									&:hover
+										opacity: 1
+
+									.arrow-icon-wrapper
+										width: 20px
+										height: 18px
+										line-height: 18px
+
+										&:active
+											background-color: isabellin
+
+										.icon
+											width: 20px
+											height: 18px
+											font-size: 20px
+											color: dim-gray
+											cursor: pointer
+											position: relative
+											top: 0px
+											left: 0px
+											user-select: none
+
+				.footer-buttons-wrapper
+					width: 110px
+
+					.footer-buttons
+						width: 100%
+						height: 100%
+						text-align: right
+
+						.footer-icon-wrapper
+							width: 55px
+							inline()
+							text-align: center
+
+							.icon
+								width: 30px
+								height: 30px
+								line-height: 30px
+								position: relative
+								top: 5px
+								font-size: 28px
+								font-weight: 600
+								user-select: none
+								cursor: pointer
+
+								&.check
+									color: chose-color
+
+									&:hover
+										border-radius: 50%
+										color: white
+										background-color: chose-color
+
+									&:active
+										box-shadow: 0 0 1px 1px chose-color
+
+								&.close
+									color: color-primary
+
+									&:hover
+										border-radius: 50%
+										color: white
+										background-color: color-primary
+
+									&:active
+										box-shadow: 0 0 1px 1px color-primary
