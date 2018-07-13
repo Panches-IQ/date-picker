@@ -49,5 +49,6 @@ module.exports = MyPicker
 ### Dependences
 
 * **moment**
-* **npm run flow**
-* **npm run build**
+* **moment-range**
+* **react**
+* **prop-types**
