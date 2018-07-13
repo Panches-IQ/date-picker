@@ -4,7 +4,7 @@
 
 ```javascript
 const React = require("react")
-const DatePicker = require("../DatePicker/DatePicker");
+const DatePicker = require("../DatePicker/DatePicker")
 
 class MyPicker extends React.Component {
 
