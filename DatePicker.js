@@ -1,16 +1,14 @@
 require("./DatePicker.styl")
 
 const React = require("react")
-const L = require("lodash")
 const Moment = require("moment")
 const MomentRange = require("moment-range")
-const moment = MomentRange.extendMoment(Moment)
-const PubSub = require("../../../pubsub")
-const momentLocale = moment.localeData()
 const PropTypes = require("prop-types")
 
-const Loc = require("./locale")
+const moment = MomentRange.extendMoment(Moment)
+const momentLocale = moment.localeData()
 
+const Loc = require("./locale")
 const logo = require("./logo.png")
 
 class DatePicker extends React.Component {
@@ -607,11 +605,11 @@ class DatePicker extends React.Component {
 						<div className="footer-hours-wrapper">
 							{ H }
 						</div>
-						<div className="footer-ampm-wrapper">
-							{ PMAM }
-						</div>
 						<div className="footer-minutes-wrapper">
 							{ m }
+						</div>
+						<div className="footer-ampm-wrapper">
+							{ PMAM }
 						</div>
 					</div> )
 				: null
