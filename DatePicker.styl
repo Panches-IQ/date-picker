@@ -1,12 +1,12 @@
 color-primary = #ff8859
 cool-gray = #8b9399
-white-smoke = #f4f4f4
+// white-smoke = #f4f4f4
+white-smoke = #F3F3F3
 dim-gray = #61686d
 main-gradient = linear-gradient(0deg, #fc5b45, #ff8859)
 box-width = 320px
 chose-color = #A0B4CE
-time-border-color = #E6E6EF
-isabellin = #e0e0e2
+time-border-color = #eee
 
 inline()
 	display: inline-block
@@ -46,16 +46,17 @@ picker-icon()
 .poppinz-date-picker-wrapper
 	height: auto
 	width: box-width
-	border-radius: 4px
+	border-radius: 3px
 	background: main-gradient
 	padding: 2px
 	z-index: 100
 	position: absolute
+	user-select: none
 
 	.poppinz-date-picker
 		height: auto
 		width: 100%
-		border-radius: 2px
+		border-radius: 1px
 		overflow: hidden
 		background-color: white
 
@@ -84,7 +85,7 @@ picker-icon()
 					.now-container
 						width: 60px
 						height: 60px
-						border-radius: 3px
+						border-radius: 1px
 						position: relative
 						top: 10px
 						left: 0px
@@ -270,7 +271,7 @@ picker-icon()
 						height: 36px
 						display: inline-block
 						border: 2px solid time-border-color
-						border-radius: 3px
+						border-radius: 1px
 
 						.footer-hours-wrapper,
 						.footer-ampm-wrapper,
@@ -323,7 +324,7 @@ picker-icon()
 										line-height: 18px
 
 										&:active
-											background-color: isabellin
+											background-color: darken(white-smoke, 15%)
 
 										.icon
 											width: 20px

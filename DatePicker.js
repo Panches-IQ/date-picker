@@ -391,7 +391,7 @@ class DatePicker extends React.Component {
 	renderHeader = () => {
 
 		const { year, month, locale } = this.state
-		const icon = "query_builder" //"timer"
+		const icon = "schedule"//"query_builder" //"timer"
 		const mLoc = Loc[locale].month
 
 		const now = Loc[locale]["now"]
@@ -412,24 +412,24 @@ class DatePicker extends React.Component {
 				<div className="date-selector-wrapper">
 					<div className="year-selector-wrapper">
 						<div className="date-selector-icon-wrapper">
-							<div className="icon material-icons" onClick={ this.decYear }>keyboard_arrow_left</div>
+							<div className="icon material-icons" onClick={ this.decYear }>arrow_left</div>
 						</div>
 						<div className="date-selector-info-wrapper">
 							<input type="text" value={ _year } onChange={ this.onYearChange } onKeyDown={ this.onYearKeyDown } />
 						</div>
 						<div className="date-selector-icon-wrapper">
-							<div className="icon material-icons" onClick={ this.incYear }>keyboard_arrow_right</div>
+							<div className="icon material-icons" onClick={ this.incYear }>arrow_right</div>
 						</div>
 					</div>
 					<div className="month-selector-wrapper">
 						<div className="date-selector-icon-wrapper">
-							<div className="icon material-icons" onClick={ this.decMonth }>keyboard_arrow_left</div>
+							<div className="icon material-icons" onClick={ this.decMonth }>arrow_left</div>
 						</div>
 						<div className="date-selector-info-wrapper">
 							<div className="date-selector-label">{ M }</div>
 						</div>
 						<div className="date-selector-icon-wrapper">
-							<div className="icon material-icons" onClick={ this.incMonth }>keyboard_arrow_right</div>
+							<div className="icon material-icons" onClick={ this.incMonth }>arrow_right</div>
 						</div>
 					</div>
 				</div>
