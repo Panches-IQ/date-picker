@@ -28,8 +28,8 @@ class MyPicker extends React.Component {
 			<div className="wrapper">
 				{ showPicker &&
 					<DatePicker
-						showHours={ true }
-						startOnMonday={ true }
+						showHours
+						startOnMonday
 						closeOnBgClick
 						saveOnDateClick
 						format="12"
