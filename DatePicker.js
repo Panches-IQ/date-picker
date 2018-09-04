@@ -83,10 +83,12 @@ class DatePicker extends React.Component {
 
 		const { selectedDate, hour, minute } = this.state
 
-		selectedDate.setHours(hour)
-		selectedDate.setMinutes(minute)
+		const sd = new Date(selectedDate)
 
-		this.props.onChange(new Date(selectedDate))
+		sd.setHours(hour)
+		sd.setMinutes(minute)
+
+		this.props.onChange(sd)
 		this.props.onClose()
 	}
 
